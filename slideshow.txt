@@ -1,0 +1,45 @@
+<SCRIPT TYPE="Text/JavaScript" LANGUAGE="JavaScript">
+<!--
+
+/*
+Script by FPMC at http://jsarchive.8m.com
+Submitted to JavaScript Kit (http://javascriptkit.com)
+For this and 400+ free scripts, visit http://javascriptkit.com
+*/
+
+//set image paths
+src = ["http://www.delraycomputer.com/images/Untitled-1.jpg", "http://www.delraycomputer.com/images/Untitled-2.jpg", "http://www.delraycomputer.com/images/Untitled-3.jpg", "http://www.delraycomputer.com/images/Untitled-4.jpg"]
+
+
+//set corresponding urls
+url = ["http://freewarejava.com", "http://javascriptkit.com", "http://dynamicdrive.com", "http://www.geocities.com"]
+
+//set duration for each image
+duration = 4;
+
+//Please do not edit below
+ads=[]; ct=0;
+function switchAd() {
+var n=(ct+1)%src.length;
+if (ads[n] && (ads[n].complete || ads[n].complete==null)) {
+document["Ad_Image"].src = ads[ct=n].src;
+}
+ads[n=(ct+1)%src.length] = new Image;
+ads[n].src = src[n];
+setTimeout("switchAd()",duration*1000);
+}
+function doLink(){
+location.href = url[ct];
+} onload = function(){
+if (document.images)
+switchAd();
+}
+//-->
+</SCRIPT>
+
+<A HREF="javascript:doLink();" onMouseOver="status=url[ct];return true;" 
+onMouseOut="status=''">
+<IMG NAME="Ad_Image" SRC="http://www.delraycomputer.com/images/Untitled-1.jpg" BORDER=0>
+</A>
+
+<p align="center"><font face="arial" size="-2">This free script provided by <a href="http://javascriptkit.com">JavaScript Kit</a></font></p>

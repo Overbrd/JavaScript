@@ -1,0 +1,23 @@
+<script language="JavaScript">
+function rotateEvery(sec)
+{
+	var Quotation=new Array()
+
+	// QUOTATIONS
+	Quotation[0] = 'First quotation';
+	Quotation[1] = 'Second quotation';
+	Quotation[2] = 'Third quotation';
+	Quotation[3] = 'Fourth quotation';
+	Quotation[4] = 'Fiveth quotation';
+	Quotation[5] = 'Sixth quotation';
+	Quotation[6] = 'You can add <b>as many</b> quotations <b>as you like</b>';
+
+	var which = Math.round(Math.random()*(Quotation.length - 1));
+	document.getElementById('textrotator').innerHTML = Quotation[which];
+	
+	setTimeout('rotateEvery('+sec+')', sec*1000);
+}
+</script>
+</head>
+<body onload="rotateEvery(1)">
+<div id="textrotator"><!--Quotations will be displayed here--></div>

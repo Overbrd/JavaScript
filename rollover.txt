@@ -1,0 +1,32 @@
+<SCRIPT language="JavaScript" type="text/javascript">
+
+<!-- hide from none JavaScript Browsers
+
+Rollimage = new Array()
+
+Rollimage[0]= new Image(121,153)
+Rollimage[0].src = "joe_open.jpg"
+
+Rollimage[1] = new Image(121,153)
+Rollimage[1].src = "joe_blink.jpg"
+
+function SwapOut() {
+document.Rupert.src = Rollimage[1].src;
+return true;
+}
+
+function SwapBack() {
+document.Rupert.src = Rollimage[0].src;
+return true;
+}
+
+// - stop hiding --> 
+</script>
+
+
+</head>
+
+<p><a href="http://www.joemaller.com/" onmouseover="SwapOut()" onmouseout="SwapBack()"><img name="Rupert" src="joe_open.jpg" width="121" height="153" border="0" alt="alt here"> </a></p>
+			If you use this, please give me credit. </center>
+
+

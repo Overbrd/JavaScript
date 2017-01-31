@@ -1,0 +1,90 @@
+
+<!-- ONE STEP TO INSTALL JUMP MENU:
+
+
+
+  1.  Copy the coding into the BODY of your HTML document  -->
+
+
+
+<!-- STEP ONE: Paste this code into the BODY of your HTML document  -->
+
+
+
+<BODY>
+
+
+
+<!-- This script and many more are available free online at -->
+
+<!-- The JavaScript Source!! http://javascript.internet.com -->
+
+<!-- Original:  Vladimir Geshanov -->
+
+<!-- Web Site:  http://hotarea.com/ -->
+
+<script language="JavaScript"> 
+
+function openDir( form ) { 
+
+	var newIndex = form.fieldname.selectedIndex; 
+
+	if ( newIndex == 0 ) { 
+
+		alert( "Please select a location!" ); 
+
+	} else { 
+
+		cururl = form.fieldname.options[ newIndex ].value; 
+
+		window.location.assign( cururl ); 
+
+	} 
+
+} 
+
+</script> 
+
+ 
+
+<table width=100% cellpadding=4 cellspacing=0 border=0> 
+
+<form name=form> 
+
+	<tr> 
+
+		<td nowrap> 
+
+			<select name="fieldname" size="1" 
+
+				onChange="openDir( this.form )"> 
+
+				<option>Jump To </option> 
+
+				<option value=http://javascript.internet.com>JSS</option> 
+
+				<option value=http://internet.com>internet.com</option> 
+
+			</select> 
+
+		</td> 
+
+	</tr> 
+
+</form> 
+
+</table> 
+
+
+
+<p><center>
+
+<font face="arial, helvetica" size"-2">Free JavaScripts provided<br>
+
+by <a href="http://javascriptsource.com">The JavaScript Source</a></font>
+
+</center><p>
+
+
+
+<!-- Script Size:  1.25 KB -->

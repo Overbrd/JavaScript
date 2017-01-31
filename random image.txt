@@ -1,0 +1,40 @@
+<script type="text/javascript" language="JavaScript">
+
+var images = new Array();
+
+
+images[0] = "images/Animation1.gif";
+images[1] = "images/florida1.gif";
+images[2] = "images/network.jpg"; 
+images[3] = "images/java_get_powered.jpg";
+images[4] = "images/MCP-RGB.gif";
+images[5] = "images/complogo.jpg"; 
+images[6] = "images/software.jpg"; 
+images[7] = "images/tv.jpg";
+images[8] = "images/240WIDE.jpg";
+
+function ShowImg() {
+var number = images.length;
+var increment = Math.floor(Math.random() * number);
+var strTemp ='<img src="' + images[increment] + '">';
+document.write(strTemp);
+}
+
+var rotate = 5000; 
+var count = 0;
+
+function RotateImg(myImage){
+ myImage.src=images[count];
+ count++;
+ if(count==images.length){count = 0;}
+ setTimeout("RotateImg(myImage)",rotate);
+} 
+
+</script>
+
+
+<body>
+
+<center><script language="javascript">ShowImg();</script></center>
+
+

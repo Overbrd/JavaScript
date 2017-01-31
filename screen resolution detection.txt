@@ -1,0 +1,13 @@
+<SCRIPT language="JavaScript">
+<!--
+if ((screen.width>=1024) && (screen.height>=768))
+{
+ window.location="highres.html";
+}
+else
+{
+  window.location="lowres.html";
+}
+//-->
+</SCRIPT>
+
