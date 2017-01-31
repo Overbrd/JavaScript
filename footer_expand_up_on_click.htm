@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+  <title></title>
+<style type="text/css">
+/*<![CDATA[*/
+
+.footer {
+  position:fixed;bottom:-170px;width:100%;height:200px;background-Color:#66CCFF;
+}
+
+/*]]>*/
+</style>
+<script type="text/javascript">
+
+
+function zxcAnimate(mde,obj,srt){
+ this.to=null;
+ this.obj=typeof(obj)=='object'?obj:document.getElementById(obj);
+ this.mde=mde.replace(/\W/g,'');
+ this.data=[srt||0];
+ return this;
+}
+
+zxcAnimate.prototype={
+
+ animate:function(srt,fin,ms,scale,c){
+  clearTimeout(this.to);
+  this.time=ms||this.time||0;
+  this.neg=srt<0||fin<0;
+  this.data=[srt,srt,fin];
+  this.mS=this.time*(!scale?1:Math.abs((fin-srt)/(scale[1]-scale[0])));
+  this.c=typeof(c)=='string'?c.charAt(0).toLowerCase():this.c?this.c:'';
+  this.inc=Math.PI/(2*this.mS);
+  this.srttime=new Date().getTime();
+  this.cng();
+ },
+
+ cng:function(){
+  var oop=this,ms=new Date().getTime()-this.srttime;
+  this.data[0]=Math.floor(this.c=='s'?(this.data[2]-this.data[1])*Math.sin(this.inc*ms)+this.data[1]:this.c=='c'?this.data[2]-(this.data[2]-this.data[1])*Math.cos(this.inc*ms):(this.data[2]-this.data[1])/this.mS*ms+this.data[1]);
+  this.apply();
+  if (ms<this.mS) this.to=setTimeout(function(){oop.cng()},10);
+  else {
+   this.data[0]=this.data[2];
+   this.apply();
+   if (this.Complete) this.Complete(this);
+  }
+ },
+
+ apply:function(){
+  if (isFinite(this.data[0])){
+   if (this.data[0]<0&&!this.neg) this.data[0]=0;
+   if (this.mde!='opacity') this.obj.style[this.mde]=this.data[0]+'px';
+   else zxcOpacity(this.obj,this.data[0]);
+  }
+ }
+
+}
+
+function zxcOpacity(obj,opc){
+ if (opc<0||opc>100) return;
+ obj.style.filter='alpha(opacity='+opc+')';
+ obj.style.opacity=obj.style.MozOpacity=obj.style.WebkitOpacity=obj.style.KhtmlOpacity=opc/100-.001;
+}
+
+
+</script>
+
+
+
+</head>
+
+<body>
+<div id="content" style=position:absolute;left:0px;top:0px;height:2000px;width:100%;background-Color:#FFFFCC;" >
+content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content content 
+</div>
+
+
+<div id="tst" class="footer">
+<input type="button" name="" value="Up" onclick="F1.Slide(true);"/>
+<input type="button" name="" value="Down" onclick="F1.Slide(false);"/>
+<input type="button" name="" value="Toggle" onclick="F1.Toggle();"/>
+
+</div>
+
+<script type="text/javascript">
+/*<![CDATA[*/
+
+function zxcFooter(o){
+ var obj=document.getElementById(o.ID);
+ this.mm=[o.From,o.To];
+ this.oop=new zxcAnimate('bottom',obj,o.From);
+ this.ms=o.Duration||1000;
+ this.ud=false;
+ this.addevt(window,'scroll','Slide',false);
+ obj=document.getElementById(o.ContentID);
+ if (obj){
+  this.cmm=[obj.offsetTop,obj.offsetTop+this.mm[0]];
+  this.coop=new zxcAnimate('top',obj,obj.offsetTop);
+
+ }
+}
+
+zxcFooter.prototype={
+
+ Toggle:function(){
+  this.Slide(!this.ud);
+ },
+
+ Slide:function(ud){
+  this.oop.animate(this.oop.data[0],this.mm[ud?1:0],this.ms,this.mm);
+  if (this.coop){
+   this.coop.animate(this.coop.data[0],this.cmm[ud?1:0],this.ms,this.mm);
+  }
+  this.ud=ud;
+ },
+
+ addevt:function(o,t,f,p){
+  var oop=this;
+  if (o.addEventListener) o.addEventListener(t,function(e){ return oop[f](p,e);}, false);
+  else if (o.attachEvent) o.attachEvent('on'+t,function(e){ return oop[f](p,e); });
+ }
+
+
+}
+
+F1=new zxcFooter({
+ ID:'tst',
+ ContentID:'content',
+ From:-170,
+ To:0,
+ Duration:1000
+});
+
+/*]]>*/
+</script>
+
+</body>
+
+</html>

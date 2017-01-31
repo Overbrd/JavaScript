@@ -1,0 +1,7 @@
+    <div class="my_footer"> 
+		<div id='close_div'>
+			<a href='javascript:parent.$.colorbox.close();'>Close This Window</a>
+		</div>
+    </div> 
+
+change colorbox to name of your jquery script
