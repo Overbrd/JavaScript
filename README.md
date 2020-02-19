@@ -1,5 +1,5 @@
 # JavaScript repository courtesy of Matthew Lind and Overboard Media Group
-# http://www.overbrd.com
+# http://mattlind.atwebpages.com/src
 # This is a repository of JavaScript, jQuery and some HTML/CSS
 # Some of the scripts were written by Matthew Lind
 # Some of the scripts were written by others
