@@ -1,6 +1,4 @@
-# JavaScript repository courtesy of Matthew Lind and Overboard Media Group
-# https://reasst.com
-# This is a repository of JavaScript, jQuery and some HTML/CSS
+# This is a repository of JavaScript files
 # Some of the scripts were written by Matthew Lind
 # Some of the scripts were written by others
 # Please retain any copyrights that may be in the scripts
